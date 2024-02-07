@@ -1,12 +1,12 @@
 var express = require('express')
 const app = express()
-const badyParser = require('badyParser')
+const bodyParser = require('body-parser')
 const cors = require('cors')
 const asyncWrapper = require('./async')
 require('dotenv').config()
 
 app.use(express.json())
-app.use(badyParser.json())
+app.use(bodyParser.json())
 app.use(cors())
 app.use(express.urlencoded({extended: false})) 
 app.use(bodyParser.urlencoded({extended: false}));
